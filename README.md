@@ -1,4 +1,4 @@
-- Sou Rafael Silva, um graduando do terceiro período de Engnharia de Software.
+- Sou Silva, um graduando do quarto período de Engnharia de Software.
 - Tenho grande interesse em atuar na área de Robótica desde muito cedo e por isso segui a área de tecnologia, com forte interesse em Hardward.
 - Atualmente estou estudando Back-end em uma escola de programação com o objetivo principal de aprender linguagens como Java e C++, principais utilizadas em projetos de robótica, em projetos como arduino que trabalho atualmente.
 
