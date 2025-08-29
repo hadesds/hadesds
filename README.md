@@ -3,3 +3,8 @@
 - Atualmente estou estudando Back-end em uma escola de programação com o objetivo principal de aprender linguagens como Java e C++, principais utilizadas em projetos de robótica, em projetos como arduino que trabalho atualmente.
 
 - Linkedin: https://www.linkedin.com/in/rafael-silva-664359218/
+-
+<a href="hadessds@gmail.com">
+<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
