@@ -10,6 +10,9 @@ Além de programar, Estou sempre aberto a colaborar em novos projetos, então fi
 ![Figma](https://img.shields.io/badge/Figma-17181E?style=for-the-badge&logo=figma&logoColor=white)
 ![UX/UI](https://img.shields.io/badge/UI%2FUX-FF69B4?style=for-the-badge&logo=adobe-xd&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Arduino(
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg" />
+          )
 
 
 ## 🌐 Conecte-se comigo
