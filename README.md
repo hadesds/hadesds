@@ -2,21 +2,26 @@
 - Tenho grande interesse em atuar na área de Robótica desde muito cedo e por isso segui a área de tecnologia, com forte interesse em Hardward.
 - Atualmente estou estudando Back-end em uma escola de programação com o objetivo principal de aprender linguagens como Java e C++, principais utilizadas em projetos de robótica, em projetos como arduino que trabalho atualmente.
 
-- Linkedin: https://www.linkedin.com/in/rafael-silva-664359218/
-- 
 ## Mais sobre mim
 Além de programar, Estou sempre aberto a colaborar em novos projetos, então fique à vontade para entrar em contato!
 ## Skills & Tools:
-![Figma](https://img.shields.io/badge/Figma-17181E?style=for-the-badge&logo=figma&logoColor=white)
-![UX/UI](https://img.shields.io/badge/UI%2FUX-FF69B4?style=for-the-badge&logo=adobe-xd&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" width="40" height="40"/>
-
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="40" height="40" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" width="40" height="40"/>
+          
+          
+## Learning:
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" width="40" height="40" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" width="40" height="40"/>
+          
+<div>
+<a href="https://github.com/hadessds">
+<img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hadessds&layout=compact&langs_count=7&theme=dracula"/>
+<img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api?username=hadessds&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+</div>
+  
 
 ## 🌐 Conecte-se comigo
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rafaelsilva)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/rafaelsilva)
+<div>
+  <a href = "mailto:hadesds@gmail.com"><img loading="lazy" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/rafael-silva-664359218" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  
+</div>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=thisisalyssonx&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=thisisalyssonx&layout=compact&theme=radical)
+![Snake animation](https://github.com/hadessds/hadessds/blob/output/github-contribution-grid-snake.svg)
