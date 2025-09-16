@@ -24,4 +24,4 @@ Além de programar, Estou sempre aberto a colaborar em novos projetos, então fi
 <a href="https://www.linkedin.com/in/rafael-silva-664359218" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  
 </div>
 
-![Snake animation](https://github.com/hadessds/hadessds/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/hadesds/hadessds/blob/output/github-contribution-grid-snake.svg)
