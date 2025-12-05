@@ -11,11 +11,6 @@ Além de programar, Estou sempre aberto a colaborar em novos projetos, então fi
 ## Learning:
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" width="40" height="40"/>   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" width="40" height="40" />   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" width="50" height="70"/>
           
-<div>
-<a href="https://github.com/hadesds">
-<img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hadesds&layout=compact&langs_count=7&theme=dracula"/>
-<img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api?username=hadesds&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-</div>
   
 
 ## 🌐 Conecte-se comigo
