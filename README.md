@@ -114,6 +114,9 @@
 
 ###
 
+![Spotify recently played](https://spotify-recently-played.jeffreyca.workers.dev/svg?user=gzrzsz5gtgc27qlmh5ikr8sse&theme=transparent&width=500&album=1&footer=wave)
+
+###
 <picture data-importer="pacman">
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hadesds/hadesds/pacman-output/pacman-contribution-graph-dark.svg?game=pacman">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hadesds/hadesds/pacman-output/pacman-contribution-graph.svg?game=pacman">
