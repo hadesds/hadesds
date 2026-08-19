@@ -106,19 +106,29 @@
   <img src="https://raw.githubusercontent.com/hadesds/hadesds/activity-graph-output/activity-graph.svg?theme=noctis-minimus&area=true&hide_border=false&hide_title=false" height="150" alt="activity-graph graph"  />
 </div>
 
-###
-
-<div data-importer="border">
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=75&section=header&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&descSize=10&descAlign=50&descAlignY=50&textBg=false&theme=cobalt"  />
-</div>
 
 ###
 
-<div data-importer="music" align="center">
-  <a href="https://open.spotify.com/user/gzrzsz5gtgc27qlmh5ikr8sse">
-    <img src="https://spotify-recently-played.jeffreyca.workers.dev/svg?user=gzrzsz5gtgc27qlmh5ikr8sse&amp;theme=transparent&amp;width=500&amp;album=1&amp;footer=wave" alt="Spotify recently played" width="500" />
-  </a>
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://open.spotify.com/user/gzrzsz5gtgc27qlmh5ikr8sse">
+        <img
+          src="https://spotify-recently-played.jeffreyca.workers.dev/svg?user=gzrzsz5gtgc27qlmh5ikr8sse&theme=transparent&width=500&album=1&footer=wave"
+          alt="Spotify recently played"
+          width="500"
+        />
+      </a>
+    </td>
+    <td align="center">
+      <img
+        src="https://i.pinimg.com/originals/2d/3d/ba/2d3dbab587fb701ce9fdfb57a0f26635.gif"
+        alt="GIF"
+        height="350"
+      />
+    </td>
+  </tr>
+</table>
 
 ###
 
@@ -127,11 +137,5 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hadesds/hadesds/pacman-output/pacman-contribution-graph.svg?game=pacman">
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/hadesds/hadesds/pacman-output/pacman-contribution-graph.svg?game=pacman">
 </picture>
-
-###
-
-<div data-importer="image" align="center">
-  <img data-importer="image" height="350" src="https://i.pinimg.com/originals/2d/3d/ba/2d3dbab587fb701ce9fdfb57a0f26635.gif"  />
-</div>
 
 ###
