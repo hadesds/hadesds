@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Exemplo</title><language>en-us</language>
+<item><title>Example Framework 5.0 released with faster builds</title><link>https://example.dev/blog/v5?utm_source=rss</link>
+<guid>post-5</guid><pubDate>Mon, 26 Oct 2026 12:00:00 GMT</pubDate><description><![CDATA[<p>The 5.0 release cuts build time.</p>]]></description></item>
+<item><title>Sem link</title><guid>x</guid></item>
+</channel></rss>

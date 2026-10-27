@@ -1,0 +1,16 @@
+Modo texto (só dentro da janela de 24h):
+
+*DevPulse AI — 27/10/2026*
+1 roteiro(s) disponível(is).
+
+*1. Anthropic files S-1 with the SEC for proposed initial public offering*
+Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A…
+⏱ 58s · ia
+Fonte: https://www.anthropic.com/news/s1-sec
+
+Roteiros completos enviados por e-mail e no painel local.
+
+Modo template — parâmetros {{1}}, {{2}}, {{3}}:
+{{1}} = 27/10/2026
+{{2}} = 1
+{{3}} = 1) Anthropic files S-1 with the SEC for proposed initial public offering (58s) fonte: https://www.anthropic.com/news/s1-sec

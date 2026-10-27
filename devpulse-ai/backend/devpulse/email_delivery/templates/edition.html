@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevPulse AI — {{ edition_label }}</title>
+<style>
+  body { margin:0; padding:0; background:#f4f5f7; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#1d2129; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 16px; }
+  .card { background:#fff; border-radius:10px; padding:20px; margin-bottom:16px; border:1px solid #e3e6eb; }
+  h1 { font-size:22px; margin:0 0 4px; } h2 { font-size:19px; margin:0 0 8px; } h3 { font-size:15px; margin:18px 0 6px; color:#384152; }
+  .muted { color:#667085; font-size:13px; }
+  .badge { display:inline-block; background:#eef2ff; color:#3538cd; border-radius:999px; padding:2px 10px; font-size:12px; margin-right:6px; }
+  .warn { background:#fff7e6; border-left:4px solid #f79009; padding:8px 12px; font-size:13px; margin:10px 0; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { border:1px solid #e3e6eb; padding:6px; text-align:left; vertical-align:top; }
+  th { background:#f9fafb; }
+  .scene { border:1px solid #e3e6eb; border-radius:8px; padding:10px; margin:8px 0; }
+  .t { font-weight:700; color:#3538cd; }
+  a { color:#3538cd; word-break: break-word; }
+  ul { padding-left:20px; margin:4px 0; }
+  pre { background:#f2f4f7; padding:8px; border-radius:6px; overflow-x:auto; font-size:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>DevPulse AI</h1>
+    <div class="muted">Edição de {{ edition_label }}</div>
+    <p>{{ summary }}</p>
+    {% if packages %}
+    <ol>
+      {% for p in packages %}<li><strong>{{ p.identification.video_title }}</strong> — {{ p.planning.duration_seconds }}s · {{ p.identification.category }}</li>{% endfor %}
+    </ol>
+    {% else %}
+    <div class="warn">Nenhuma notícia atendeu aos critérios mínimos de verificação. Nenhum roteiro foi produzido para não publicar informação sem sustentação.</div>
+    <ul>{% for r in empty_reasons[:10] %}<li>{{ r }}</li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+
+  {% for p in packages %}
+  {% set i = p.identification %}
+  <div class="card">
+    <span class="badge">Roteiro {{ loop.index }}</span><span class="badge">{{ i.category }}</span><span class="badge">{{ i.editorial_score|round|int }}/100</span>
+    <h2>{{ i.video_title }}</h2>
+    <div class="muted">Notícia: {{ i.news_title }}<br>Publicação original: {{ i.published_at or "não informada" }} · Verificado em {{ i.last_verified_at }}</div>
+    {% if p.generator == "extractive" %}<div class="warn">Roteiro-base extrativo (sem IA): trechos no idioma original; traduza e complete a análise antes de gravar.</div>{% endif %}
+    <p><strong>Por que foi escolhida:</strong> {{ i.selection_reason }}</p>
+
+    <h3>Fontes</h3>
+    <ul>{% for s in i.primary_sources + i.complementary_sources %}<li>[{{ s.ref }}] <a href="{{ s.url }}">{{ s.title }}</a> — {{ s.publisher }} ({{ s.evidence_type }})</li>{% endfor %}</ul>
+
+    <h3>Planejamento</h3>
+    <p><strong>Objetivo:</strong> {{ p.planning.objective }}<br><strong>Público:</strong> {{ p.planning.audience }} · <strong>Nível:</strong> {{ p.planning.technical_level }} · <strong>Formato:</strong> {{ fmt.get(p.planning.format, p.planning.format) }} · <strong>Duração:</strong> {{ p.planning.duration_seconds }}s<br><strong>Gancho:</strong> {{ p.planning.hook }}<br><strong>Mensagem principal:</strong> {{ p.planning.key_message }}</p>
+
+    <h3>Roteiro cronometrado</h3>
+    {% for s in p.scenes %}
+    <div class="scene">
+      <div class="t">{{ s.start_second }}–{{ s.end_second }}s · {{ s.section }}</div>
+      <div><strong>Fala:</strong> {{ s.speech }}</div>
+      <div class="muted"><strong>Cena:</strong> {{ s.action }} · <strong>Na tela:</strong> {{ s.on_screen }} · <strong>Texto:</strong> {{ s.overlay_text }} · <strong>Edição:</strong> {{ s.editing_notes }} · <strong>Recurso:</strong> {{ s.visual_resource }}</div>
+    </div>
+    {% endfor %}
+
+    <h3>Guia de gravação</h3>
+    <p><strong>Câmera:</strong> {{ p.recording_guide.on_camera|join("; ") }}<br><strong>Tela:</strong> {{ p.recording_guide.screen_capture|join("; ") }}<br><strong>Alternância:</strong> {{ p.recording_guide.alternation }}</p>
+    <ul>{% for step in p.recording_guide.steps %}<li>{{ step }}</li>{% endfor %}</ul>
+    {% if p.recording_guide.commands %}<pre>{{ p.recording_guide.commands|join("\n") }}</pre>{% endif %}
+    <p class="muted"><strong>Demonstração:</strong> {{ p.recording_guide.demo_status }} — {{ p.recording_guide.demo_note }}</p>
+
+    <h3>Recursos visuais</h3>
+    <table><tr><th>Cena</th><th>Recurso</th><th>Licença</th></tr>
+    {% for v in p.visual_resources %}<tr><td>{{ v.scene if v.scene is not none else "—" }}</td><td>{{ v.description }}{% if v.url %}<br><a href="{{ v.url }}">{{ v.url }}</a>{% endif %}</td><td>{{ v.license_info }}</td></tr>{% endfor %}
+    </table>
+
+    <h3>Legenda para o Instagram</h3>
+    <p><strong>Capa:</strong> {{ p.publication.cover_title }}</p>
+    <pre style="white-space:pre-wrap">{{ p.publication.caption }}
+
+{{ p.publication.hashtags|join(" ") }}</pre>
+    <p><strong>Comentário fixado:</strong> {{ p.publication.pinned_comment }}<br><strong>Chamada:</strong> {{ p.publication.call_to_action }}</p>
+
+    <h3>Checklist final</h3>
+    <ul>{% for c in p.publication.final_checklist %}<li>☐ {{ c }}</li>{% endfor %}</ul>
+    {% if p.uncertainties %}<div class="warn"><strong>Incertezas:</strong><ul>{% for u in p.uncertainties %}<li>{{ u }}</li>{% endfor %}</ul></div>{% endif %}
+  </div>
+  {% endfor %}
+  <p class="muted">Painel local (acessível apenas no computador onde o DevPulse roda): {{ dashboard_url }}</p>
+</div>
+</body>
+</html>

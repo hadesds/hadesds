@@ -1,0 +1,227 @@
+# Fontes iniciais do DevPulse AI.
+#
+# Este arquivo é lido por `devpulse init`/`devpulse seed` e só CRIA fontes novas
+# (pelo `slug`); alterações feitas depois no painel não são sobrescritas.
+# Para incluir uma fonte, adicione um bloco aqui ou use a tela "Fontes" do painel.
+#
+# priority_tier: 1 = anúncio oficial/documentação · 2 = repositório/changelog oficial
+#                3 = newsletter · 4 = portal especializado · 5 = independente/agregador
+# categorias: desenvolvimento | ia | infraestrutura | seguranca | mercado
+#
+# "verificado": a URL respondeu a partir do ambiente onde o projeto foi desenvolvido.
+# As demais são endereços públicos conhecidos; o DevPulse registra falhas na
+# primeira coleta caso alguma tenha mudado. Nenhuma fonte é considerada válida sem coleta real.
+
+sources:
+  # --- Newsletter (primeira fonte de interesse) ---
+  - slug: techdrops
+    name: TechDrops (newsletter)
+    connector_type: email_newsletter
+    config:
+      sender: tech@newsletter.thedrops.com.br   # REMETENTE da newsletter
+      lookback_days: 3
+      max_messages: 5
+    category: desenvolvimento
+    priority_tier: 3
+    reliability: 0.7
+    fetch_interval_minutes: 120
+    notes: >
+      Lida da caixa configurada em NEWSLETTER_MAILBOX_* (.env). Não há API pública conhecida;
+      o conteúdo não é presumido acessível na web. Cada link citado é aberto e verificado na fonte original.
+
+  # --- Anúncios oficiais ---
+  - slug: docker-blog
+    name: Docker Blog
+    connector_type: rss
+    url: https://www.docker.com/blog/feed/
+    category: infraestrutura
+    priority_tier: 1
+    reliability: 0.95
+    notes: >
+      Feed público; no ambiente de desenvolvimento respondeu a curl mas recusou (HTTP 403) o cliente
+      HTTP do DevPulse. O sistema registra a recusa e não tenta contorná-la.
+  - slug: nodejs-blog
+    name: Node.js Blog
+    connector_type: rss
+    url: https://nodejs.org/en/feed/blog.xml
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+    notes: verificado
+  - slug: anthropic-news
+    name: Anthropic News
+    connector_type: webpage
+    url: https://www.anthropic.com/news
+    config:
+      link_pattern: "^/news/[a-z0-9-]+$"
+      exclude_pattern: "^/news/(announcements|partnerships|policy|product|societal-impacts)$"
+      max_items: 15
+    category: ia
+    priority_tier: 1
+    reliability: 0.95
+    fetch_interval_minutes: 180
+    notes: verificado (página sem RSS; datas vêm dos metadados de cada artigo)
+  - slug: openai-news
+    name: OpenAI News
+    connector_type: rss
+    url: https://openai.com/news/rss.xml
+    category: ia
+    priority_tier: 1
+    reliability: 0.95
+  - slug: github-blog
+    name: GitHub Blog
+    connector_type: rss
+    url: https://github.blog/feed/
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: github-changelog
+    name: GitHub Changelog
+    connector_type: rss
+    url: https://github.blog/changelog/feed/
+    category: desenvolvimento
+    priority_tier: 2
+    reliability: 0.95
+  - slug: python-insider
+    name: Python Insider
+    connector_type: rss
+    url: https://blog.python.org/rss.xml
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: typescript-blog
+    name: TypeScript Blog (Microsoft)
+    connector_type: rss
+    url: https://devblogs.microsoft.com/typescript/feed/
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: dotnet-blog
+    name: .NET Blog (Microsoft)
+    connector_type: rss
+    url: https://devblogs.microsoft.com/dotnet/feed/
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: rust-blog
+    name: Rust Blog
+    connector_type: rss
+    url: https://blog.rust-lang.org/feed.xml
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: go-blog
+    name: The Go Blog
+    connector_type: rss
+    url: https://go.dev/blog/feed.atom
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: react-blog
+    name: React Blog
+    connector_type: rss
+    url: https://react.dev/rss.xml
+    category: desenvolvimento
+    priority_tier: 1
+    reliability: 0.95
+  - slug: kubernetes-blog
+    name: Kubernetes Blog
+    connector_type: rss
+    url: https://kubernetes.io/feed.xml
+    category: infraestrutura
+    priority_tier: 1
+    reliability: 0.95
+  - slug: cloudflare-blog
+    name: Cloudflare Blog
+    connector_type: rss
+    url: https://blog.cloudflare.com/rss/
+    category: infraestrutura
+    priority_tier: 1
+    reliability: 0.9
+  - slug: huggingface-blog
+    name: Hugging Face Blog
+    connector_type: rss
+    url: https://huggingface.co/blog/feed.xml
+    category: ia
+    priority_tier: 1
+    reliability: 0.9
+
+  # --- Repositórios oficiais e changelogs ---
+  - slug: gh-nextjs
+    name: Next.js releases
+    connector_type: github_releases
+    config: {repo: vercel/next.js, max_items: 3}
+    category: desenvolvimento
+    priority_tier: 2
+    reliability: 0.95
+    fetch_interval_minutes: 240
+  - slug: gh-fastapi
+    name: FastAPI releases
+    connector_type: github_releases
+    config: {repo: fastapi/fastapi, max_items: 3}
+    category: desenvolvimento
+    priority_tier: 2
+    reliability: 0.95
+    fetch_interval_minutes: 240
+  - slug: gh-typescript
+    name: TypeScript releases
+    connector_type: github_releases
+    config: {repo: microsoft/TypeScript, max_items: 3}
+    category: desenvolvimento
+    priority_tier: 2
+    reliability: 0.95
+    fetch_interval_minutes: 240
+
+  # --- APIs públicas ---
+  - slug: cisa-kev
+    name: CISA Known Exploited Vulnerabilities
+    connector_type: json_api
+    url: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+    config: {preset: cisa_kev, max_items: 15, max_age_days: 5}
+    category: seguranca
+    priority_tier: 1
+    reliability: 1.0
+    fetch_interval_minutes: 360
+  - slug: hackernews-front
+    name: Hacker News (página inicial)
+    connector_type: json_api
+    url: https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=40
+    config: {preset: hackernews, min_points: 80, max_items: 40}
+    priority_tier: 5
+    reliability: 0.5
+    notes: Agregador — sinal de interesse do público; nunca confirma um fato sozinho.
+
+  # --- Portais especializados (contextualização e confirmação independente) ---
+  - slug: infoq
+    name: InfoQ
+    connector_type: rss
+    url: https://feed.infoq.com/
+    priority_tier: 4
+    reliability: 0.8
+  - slug: the-hacker-news
+    name: The Hacker News (segurança)
+    connector_type: rss
+    url: https://feeds.feedburner.com/TheHackersNews
+    category: seguranca
+    priority_tier: 4
+    reliability: 0.75
+  - slug: techcrunch
+    name: TechCrunch
+    connector_type: rss
+    url: https://techcrunch.com/feed/
+    category: mercado
+    priority_tier: 4
+    reliability: 0.75
+  - slug: stackoverflow-blog
+    name: Stack Overflow Blog
+    connector_type: rss
+    url: https://stackoverflow.blog/feed/
+    category: mercado
+    priority_tier: 4
+    reliability: 0.8
+  - slug: tecnoblog
+    name: Tecnoblog
+    connector_type: rss
+    url: https://tecnoblog.net/feed/
+    priority_tier: 4
+    reliability: 0.75

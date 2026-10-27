@@ -1,0 +1,41 @@
+[project]
+name = "devpulse-ai"
+version = "1.0.0"
+description = "Agente pessoal de notícias de tecnologia e roteiros para Instagram Reels"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.162.0",
+  "uvicorn[standard]==0.54.0",
+  "SQLAlchemy==2.1.6",
+  "psycopg[binary]==3.3.6",
+  "alembic==1.20.1",
+  "APScheduler==3.11.3",
+  "httpx==0.28.1",
+  "feedparser==6.0.14",
+  "beautifulsoup4==4.15.0",
+  "lxml==6.1.3",
+  "pydantic==2.14.1",
+  "pydantic-settings==2.16.1",
+  "itsdangerous==2.2.0",
+  "Jinja2==3.1.6",
+  "PyYAML==6.0.3",
+  "anthropic==2.3.0",
+  "tzdata==2026.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+include = ["devpulse*"]
+
+[tool.setuptools.package-data]
+devpulse = ["email_delivery/templates/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "integration: requer PostgreSQL (TEST_DATABASE_URL)",
+  "external: acessa serviços reais; só roda com RUN_EXTERNAL_TESTS=1",
+]
+addopts = "-q"
